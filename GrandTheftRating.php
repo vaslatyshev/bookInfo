@@ -11,7 +11,7 @@ Class GrandTheftRating
 		if(!($file = @file_get_html($url))){
 	        throw new Exception('Cannot download file ' . $url);
 	    }
-
+	    
 	    $bookInfoResult=new BookInfoResult;
 
 	    $ratingBar = $file->find('#rating_bar');
@@ -21,10 +21,12 @@ Class GrandTheftRating
 		$allTags=$file->find('#detail_tags .make-checkin-form .pseudo-href li span');
 		$ratingValue=reset($ratingValue);
 		$reviewCount=reset($reviewCount);
-		$allTags=reset($allTags);
+		$i=0;
 		if (count($allTags)>0)
 			foreach($allTags as $tag) {
-				$bookInfoResult->tags[]=$tag->innerText();
+				$bookInfoResult->tags[]=mb_convert_encoding($tag->innerText(), 'utf8','windows-1251');
+				if (++$i>$this->cntTags) 
+					break;
 			}
 
 	    $bookInfoResult->ratingValue=($ratingValue?$ratingValue->innerText():0);
