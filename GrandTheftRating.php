@@ -1,3 +1,5 @@
+<?php 
+
 namespace vaslatyshev\bookinfo;
 
 Class GrandTheftRating
