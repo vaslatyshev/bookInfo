@@ -3,10 +3,13 @@ Class GrandTheftRating
 	public static function getBookInfo($url)
 	{
 		$userInfo=array();
-
+		
 		if(!($file = @file_get_html($url))){
 	        throw new Exception('Cannot download file ' . $url);
 	    }
+	    
+	    $bookInfoResult=new BookInfoResult;
+	    
 	    $ratingBar = $file->find('#rating_bar');
 		$ratingBar = reset($ratingBar);
 		$ratingValue=$ratingBar->find('div[itemprop="ratingValue"]');
@@ -16,12 +19,12 @@ Class GrandTheftRating
 		$reviewCount=reset($reviewCount);
 		$allTags=reset($allTags);
 		foreach($allTags as $tag) {
-			$userInfo['tags'][]=$tag->title;
+			$bookInfoResult->tags[]=$tag->title;
 		}
-
-	    $userInfo['ratingValue']=($ratingValue?$ratingValue->innerText():0);
-	    $userInfo['reviewCount']=($reviewCount?$reviewCount->innerText():0);
-
-	    echo json_encode($userInfo);
+		
+	    $bookInfoResult->ratingValue=($ratingValue?$ratingValue->innerText():0);
+	    $bookInfoResult->reviewCount=($reviewCount?$reviewCount->innerText():0);
+	    
+	    return $bookInfoResult;
 	}
 }
