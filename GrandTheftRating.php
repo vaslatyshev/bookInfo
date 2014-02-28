@@ -22,9 +22,10 @@ Class GrandTheftRating
 		$ratingValue=reset($ratingValue);
 		$reviewCount=reset($reviewCount);
 		$allTags=reset($allTags);
-		foreach($allTags as $tag) {
-			$bookInfoResult->tags[]=$tag->innerText();
-		}
+		if (count($allTags)>0)
+			foreach($allTags as $tag) {
+				$bookInfoResult->tags[]=$tag->innerText();
+			}
 
 	    $bookInfoResult->ratingValue=($ratingValue?$ratingValue->innerText():0);
 	    $bookInfoResult->reviewCount=($reviewCount?$reviewCount->innerText():0);
