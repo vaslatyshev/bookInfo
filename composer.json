@@ -1,0 +1,21 @@
+{
+    "name": "vaslatyshev/bookInfo",
+    "description": "Get book info from ozon.ru",
+    "keywords": ["bookInfo"],
+    "type": "bookInfo",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Vasiliy Latyshev",
+            "email": "v.p.latyshev@yandex.ru"
+        }
+    ],
+    "require" : {
+        "shark/simple_html_dom" : "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "vaslatyshev\\bookInfo\\": ""
+        }
+    }
+}
