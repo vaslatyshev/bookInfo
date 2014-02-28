@@ -1,4 +1,7 @@
+<?php
+
 namespace vaslatyshev\bookinfo;
+
 Class BookInfoResult
 {
 	public $ratingValue=0;
