@@ -1,4 +1,4 @@
-namespace vaslatyshev\bookinfo\grandTheftRating;
+namespace vaslatyshev\bookinfo;
 
 Class GrandTheftRating
 {	
