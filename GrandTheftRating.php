@@ -1,3 +1,5 @@
+namespace vaslatyshev\bookinfo\grandTheftRating;
+
 Class GrandTheftRating
 {	
 	public static function getBookInfo($url)
