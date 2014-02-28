@@ -1,5 +1,5 @@
 {
-    "name": "vaslatyshev/bookInfo",
+    "name": "vaslatyshev/bookinfo",
     "description": "Get book info from ozon.ru",
     "keywords": ["bookInfo"],
     "type": "bookInfo",
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "vaslatyshev\\bookInfo\\": ""
+            "vaslatyshev\\bookinfo\\": ""
         }
     }
 }
