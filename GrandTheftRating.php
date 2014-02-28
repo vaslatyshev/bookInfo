@@ -25,7 +25,7 @@ Class GrandTheftRating
 		if (count($allTags)>0)
 			foreach($allTags as $tag) {
 				$bookInfoResult->tags[]=mb_convert_encoding($tag->innerText(), 'utf8','windows-1251');
-				if (++$i>$this->cntTags) 
+				if (++$i>$bookInfoResult->cntTags)
 					break;
 			}
 
