@@ -1,4 +1,4 @@
-namespace vaslatyshev\bookinfo\bookInfoResult;
+namespace vaslatyshev\bookinfo;
 Class BookInfoResult
 {
 	public $ratingValue=0;
