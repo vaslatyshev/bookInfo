@@ -9,7 +9,7 @@ Class GrandTheftRating
 		$userInfo=array();
 
 		if(!($file = @file_get_html($url))){
-	        throw new Exception('Cannot download file ' . $url);
+	        throw new \Exception('Cannot download file ' . $url);
 	    }
 	    
 	    $bookInfoResult=new BookInfoResult;
