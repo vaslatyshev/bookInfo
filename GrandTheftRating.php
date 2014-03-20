@@ -13,7 +13,7 @@ Class GrandTheftRating
 	    }
 	    
 	    $bookInfoResult=new BookInfoResult;
-	    if (!method_exists($file,'find'))
+	    if (!is_object($file))
 	    	return $bookInfoResult;
 	    	
 	    	$ratingBar = $file->find('#rating_bar');
