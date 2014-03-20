@@ -13,8 +13,10 @@ Class GrandTheftRating
 	    }
 	    
 	    $bookInfoResult=new BookInfoResult;
-
-	    $ratingBar = $file->find('#rating_bar');
+	    if (!method_exists($file,'find'))
+	    	return $bookInfoResult;
+	    	
+	    	$ratingBar = $file->find('#rating_bar');
 		$ratingBar = reset($ratingBar);
 		$ratingValue=$ratingBar->find('div[itemprop="ratingValue"]');
 		$reviewCount=$ratingBar->find('div[itemprop="reviewCount"]');
